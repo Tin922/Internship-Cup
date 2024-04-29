@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,84 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model SurveyResponse {
+  id                  Int     @id @default(autoincrement())
+  user                User    @relation(fields: [userId], references: [id])
+  userId              Int     @unique
+  gender              String
+  age                 Int
+  therapyPreference   String
+  beenToPsychologist  Boolean
+  reasonForHelp       String
+  expectations        String
+  experiencingAnxiety Boolean
+  takingMedication    Boolean
+  chronicPain         Boolean
+  financialStatus     String
+  sleepHabits         String
+  doctorPreferences   String
+}
+
+model User {
+  id               Int             @id @default(autoincrement())
+  firstName        String
+  lastName         String
+  email            String          @unique
+  password         String
+  registrationDate DateTime        @default(now())
+  journalEntries   Journal[]
+  appointments     Appointment[]
+  surveyResponseId Int?
+  SurveyResponse   SurveyResponse?
+  DoctorUsers      DoctorUser[]
+}
+
+model Doctor {
+  id                Int           @id @default(autoincrement())
+  firstName         String
+  lastName          String
+  gender            String
+  yearsOfExperience Int
+  specialization    String
+  practicingCity    String
+  contactInfo       String
+  polyclinic        String
+  appointments      Appointment[]
+  DoctorUser        DoctorUser[]
+}
+
+model Appointment {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  doctor    Doctor   @relation(fields: [doctorId], references: [id])
+  doctorId  Int
+  dateTime  DateTime
+  confirmed Boolean  @default(false)
+}
+
+model Journal {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  entryDate DateTime
+  entryText String
+  entryMood Int
+}
+
+model RelaxationExercise {
+  id                  Int    @id @default(autoincrement())
+  exerciseName        String
+  exerciseDescription String
+  exercisePhoto       String
+}
+
+model DoctorUser {
+  id       Int    @id @default(autoincrement())
+  doctor   Doctor @relation(fields: [doctorId], references: [id])
+  doctorId Int
+  user     User   @relation(fields: [userId], references: [id])
+  userId   Int
 }
