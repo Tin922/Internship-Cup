@@ -99,8 +99,8 @@ model DoctorUser {
   doctorId                  Int
   user                      User    @relation(fields: [userId], references: [id])
   userId                    Int
-  isDoctorApprovedByUser    Boolean
-  userJournalAccessApproved Boolean
+  isDoctorApprovedByUser    Boolean @default(false)
+  userJournalAccessApproved Boolean @default(false)
 }
 
 model Medicine {
