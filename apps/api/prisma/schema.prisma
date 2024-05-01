@@ -94,11 +94,13 @@ model RelaxationExercise {
 }
 
 model DoctorUser {
-  id       Int    @id @default(autoincrement())
-  doctor   Doctor @relation(fields: [doctorId], references: [id])
-  doctorId Int
-  user     User   @relation(fields: [userId], references: [id])
-  userId   Int
+  id                        Int     @id @default(autoincrement())
+  doctor                    Doctor  @relation(fields: [doctorId], references: [id])
+  doctorId                  Int
+  user                      User    @relation(fields: [userId], references: [id])
+  userId                    Int
+  isDoctorApprovedByUser    Boolean
+  userJournalAccessApproved Boolean
 }
 
 model Medicine {
