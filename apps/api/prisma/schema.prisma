@@ -8,21 +8,21 @@ datasource db {
 }
 
 model SurveyResponse {
-  id                  Int     @id @default(autoincrement())
-  user                User    @relation(fields: [userId], references: [id])
-  userId              Int     @unique
-  gender              String
-  age                 Int
-  therapyPreference   String
-  beenToPsychologist  Boolean
-  reasonForHelp       String
-  expectations        String
-  experiencingAnxiety Boolean
-  takingMedication    Boolean
-  chronicPain         Boolean
-  financialStatus     String
-  sleepHabits         String
-  doctorPreferences   String
+  id                  Int      @id @default(autoincrement())
+  user                User     @relation(fields: [userId], references: [id])
+  userId              Int      @unique
+  gender              String?
+  age                 Int?
+  therapyPreference   String?
+  beenToPsychologist  Boolean?
+  reasonForHelp       String?
+  expectations        String?
+  experiencingAnxiety Boolean?
+  takingMedication    Boolean?
+  chronicPain         Boolean?
+  financialStatus     String?
+  sleepHabits         String?
+  doctorPreferences   String?
 }
 
 model User {
@@ -37,6 +37,8 @@ model User {
   surveyResponseId Int?
   SurveyResponse   SurveyResponse?
   DoctorUsers      DoctorUser[]
+  Hobby            Hobby[]
+  Medicine         Medicine[]
 }
 
 model Doctor {
@@ -49,8 +51,10 @@ model Doctor {
   practicingCity    String
   contactInfo       String
   polyclinic        String
+  subscriptionTier  Int           @default(0)
   appointments      Appointment[]
   DoctorUser        DoctorUser[]
+  Medicine          Medicine[]
 }
 
 model Appointment {
@@ -61,22 +65,32 @@ model Appointment {
   doctorId  Int
   dateTime  DateTime
   confirmed Boolean  @default(false)
+  price     Float
 }
 
 model Journal {
   id        Int      @id @default(autoincrement())
   user      User     @relation(fields: [userId], references: [id])
   userId    Int
-  entryDate DateTime
-  entryText String
-  entryMood Int
+  entryDate DateTime @default(now())
+  entryText String?
+  entryMood Int?
+}
+
+model Hobby {
+  id           Int     @id @default(autoincrement())
+  user         User    @relation(fields: [userId], references: [id])
+  userId       Int
+  name         String
+  active       Boolean
+  timesPerWeek Int?
 }
 
 model RelaxationExercise {
-  id                  Int    @id @default(autoincrement())
+  id                  Int     @id @default(autoincrement())
   exerciseName        String
-  exerciseDescription String
-  exercisePhoto       String
+  exerciseDescription String?
+  exercisePhoto       String?
 }
 
 model DoctorUser {
@@ -85,4 +99,15 @@ model DoctorUser {
   doctorId Int
   user     User   @relation(fields: [userId], references: [id])
   userId   Int
+}
+
+model Medicine {
+  id                 Int     @id @default(autoincrement())
+  name               String
+  description        String?
+  quantity           String
+  prescribedByDoctor Doctor  @relation(fields: [doctorId], references: [id])
+  doctorId           Int
+  usedBy             User    @relation(fields: [userId], references: [id])
+  userId             Int
 }
