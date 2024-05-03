@@ -12,7 +12,6 @@ model SurveyResponse {
   user                User     @relation(fields: [userId], references: [id])
   userId              Int      @unique
   gender              String?
-  age                 Int?
   therapyPreference   String?
   beenToPsychologist  Boolean?
   reasonForHelp       String?
@@ -26,67 +25,104 @@ model SurveyResponse {
 }
 
 model User {
-  id               Int             @id @default(autoincrement())
-  firstName        String
-  lastName         String
-  email            String          @unique
-  password         String
-  registrationDate DateTime        @default(now())
-  journalEntries   Journal[]
-  appointments     Appointment[]
-  surveyResponseId Int?
-  SurveyResponse   SurveyResponse?
-  DoctorUsers      DoctorUser[]
-  Hobby            Hobby[]
-  Medicine         Medicine[]
+  id                   Int             @id @default(autoincrement())
+  firstName            String
+  lastName             String
+  email                String          @unique
+  password             String
+  registrationDate     DateTime        @default(now())
+  dateOfBirth          DateTime?
+  receiveNotifications Boolean         @default(false)
+  preferredCity        String?
+  preferredCounty      String?
+  profilePhoto         String?
+  streak               Int             @default(0)
+  journalEntries       Journal[]
+  appointments         Appointment[]
+  surveyResponseId     Int?
+  SurveyResponse       SurveyResponse?
+  DoctorUsers          DoctorUser[]
+  Medicine             Medicine[]
+  MoodEntry            MoodEntry[]
 }
 
 model Doctor {
-  id                Int           @id @default(autoincrement())
-  firstName         String
-  lastName          String
-  gender            String
-  yearsOfExperience Int
-  specialization    String
-  practicingCity    String
-  contactInfo       String
-  polyclinic        String
-  subscriptionTier  Int           @default(0)
-  appointments      Appointment[]
-  DoctorUser        DoctorUser[]
-  Medicine          Medicine[]
+  id                         Int           @id @default(autoincrement())
+  firstName                  String
+  lastName                   String
+  gender                     String
+  yearsOfExperience          Int
+  specialization             String
+  practicingCity             String
+  contactInfo                String
+  polyclinic                 String
+  subscriptionTier           Int           @default(0)
+  doctorType                 DoctorType
+  isAvailableForAppointments Boolean       @default(true)
+  availableTimes             Json?
+  doctorSurvey               Json?
+  appointments               Appointment[]
+  DoctorUser                 DoctorUser[]
+  Medicine                   Medicine[]
 }
 
 model Appointment {
-  id        Int      @id @default(autoincrement())
-  user      User     @relation(fields: [userId], references: [id])
+  id        Int               @id @default(autoincrement())
+  user      User              @relation(fields: [userId], references: [id])
   userId    Int
-  doctor    Doctor   @relation(fields: [doctorId], references: [id])
+  doctor    Doctor            @relation(fields: [doctorId], references: [id])
   doctorId  Int
-  dateTime  DateTime
-  confirmed Boolean  @default(false)
-  price     Float
+  startTime DateTime
+  endTime   DateTime
+  status    AppointmentStatus @default(PENDING)
+  price     Float?
+}
+
+model FactorCategory {
+  id                 Int                 @id @default(autoincrement())
+  name               String              @unique
+  InfluencingFactors InfluencingFactor[]
+}
+
+model InfluencingFactor {
+  id         Int            @id @default(autoincrement())
+  name       String         @unique
+  createdAt  DateTime       @default(now())
+  category   FactorCategory @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  Journal    Journal?       @relation(fields: [journalId], references: [id])
+  journalId  Int?
 }
 
 model Journal {
+  id                 Int                 @id @default(autoincrement())
+  user               User                @relation(fields: [userId], references: [id])
+  userId             Int
+  entryDate          DateTime            @default(now())
+  entryText          String?
+  MoodEntry          MoodEntry?
+  influencingFactors InfluencingFactor[]
+}
+
+model Mood {
+  id          Int         @id @default(autoincrement())
+  emoji       String
+  message     String
+  MoodEntries MoodEntry[]
+}
+
+model MoodEntry {
   id        Int      @id @default(autoincrement())
   user      User     @relation(fields: [userId], references: [id])
+  journal   Journal  @relation(fields: [journalId], references: [id])
+  journalId Int      @unique
   userId    Int
-  entryDate DateTime @default(now())
-  entryText String?
-  entryMood Int?
+  mood      Mood     @relation(fields: [moodId], references: [id])
+  moodId    Int
+  createdAt DateTime @default(now())
 }
 
-model Hobby {
-  id           Int     @id @default(autoincrement())
-  user         User    @relation(fields: [userId], references: [id])
-  userId       Int
-  name         String
-  active       Boolean
-  timesPerWeek Int?
-}
-
-model RelaxationExercise {
+model BreathingExercise {
   id                  Int     @id @default(autoincrement())
   exerciseName        String
   exerciseDescription String?
@@ -94,13 +130,13 @@ model RelaxationExercise {
 }
 
 model DoctorUser {
-  id                        Int     @id @default(autoincrement())
-  doctor                    Doctor  @relation(fields: [doctorId], references: [id])
-  doctorId                  Int
-  user                      User    @relation(fields: [userId], references: [id])
-  userId                    Int
-  isDoctorApprovedByUser    Boolean @default(false)
-  userJournalAccessApproved Boolean @default(false)
+  id                     Int                  @id @default(autoincrement())
+  doctor                 Doctor               @relation(fields: [doctorId], references: [id])
+  doctorId               Int
+  user                   User                 @relation(fields: [userId], references: [id])
+  userId                 Int
+  isDoctorApprovedByUser DoctorApprovalStatus
+  journalAccess          Boolean              @default(false)
 }
 
 model Medicine {
@@ -112,4 +148,22 @@ model Medicine {
   doctorId           Int
   usedBy             User    @relation(fields: [userId], references: [id])
   userId             Int
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELED
+}
+
+enum DoctorApprovalStatus {
+  PENDING
+  INTHERAPY
+  DECLINED
+}
+
+enum DoctorType {
+  PSYCHOLOGIST
+  PSYCHIATRIST
 }
