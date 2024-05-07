@@ -1,0 +1,37 @@
+.mainArea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.mascotImage {
+  width: 240px;
+  margin-bottom: 0px;
+}
+
+.surveyQuestion {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+}
+
+.surveyAnswers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.skipSurvey {
+  position: absolute;
+  left: 0px;
+  bottom: 20px;
+  font-size: 16px;
+  color: var(--medium);
+}
