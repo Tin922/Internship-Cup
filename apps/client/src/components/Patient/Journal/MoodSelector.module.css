@@ -1,0 +1,30 @@
+.moodSelector {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  scrollbar-width: none;
+  column-gap: 20px;
+  width: 100%;
+}
+
+.moodSelector::-webkit-scrollbar {
+  display: none;
+}
+
+.mood {
+  height: 66px;
+  width: 66px;
+}
+
+.statistics {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+  margin-top: 216px;
+}
+
+.statistics::-webkit-scrollbar {
+  display: none;
+}
