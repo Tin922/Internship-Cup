@@ -1,37 +1,86 @@
-.mainArea {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.mascotImage {
-  width: 240px;
-  margin-bottom: 0px;
-}
-
-.surveyQuestion {
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 33px;
-  text-align: center;
-}
-
-.surveyAnswers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
 .skipSurvey {
   position: absolute;
   left: 0px;
   bottom: 20px;
   font-size: 16px;
   color: var(--medium);
+}
+
+.styledButton {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-med);
+  background-color: var(--secondary);
+  padding: 22px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: 0.1s ease-in-out background-color;
+  border-radius: 22px;
+  border: none;
+}
+
+.styledButton:hover {
+  background-color: var(--secondary-shade);
+}
+
+.styledButton:disabled {
+  background-color: var(--medium);
+  cursor: not-allowed;
+}
+
+.outlined {
+  background: none;
+  border: 2px solid var(--secondary);
+  transition:
+    0.1s ease-in-out color,
+    0.1s ease-in-out background-color;
+}
+
+.outlined:hover {
+  background-color: var(--secondary);
+}
+.questionPhoto {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.questionPhoto img {
+  width: auto;
+  height: 300px;
+}
+
+.mainDiv {
+  width: 375px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+}
+.skipButton {
+  position: absolute;
+  bottom: 50px;
+  left: 5px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--grey);
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+.questionText {
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+}
+.buttonsYesNo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
