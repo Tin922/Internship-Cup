@@ -1,0 +1,28 @@
+.journalBook {
+  background-color: var(--light-blue);
+  border-left: 9px solid var(--secondary);
+  border-radius: 0 12.65px 12.65px 0;
+  height: 140px;
+  width: 113px;
+  padding: 14px 22px 3px 20px;
+}
+
+.journalBookLogo {
+  width: 100%;
+}
+
+.journalBookText {
+  color: var(--dark);
+  font-size: 12px;
+  margin: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.daysCounter {
+  color: var(--primary);
+  font-size: 48px;
+  margin: 0px;
+  text-align: center;
+}
