@@ -18,7 +18,8 @@ const StyledButton = (props) => {
     <button
       type={type}
       className={`${styles.styledButton} ${styles[styleType] || ""}`}
-      {...(link || clickFunction ? { onClick: handleClick } : {})}>
+      {...(link || clickFunction ? { onClick: handleClick } : {})}
+    >
       {text}
     </button>
   );
