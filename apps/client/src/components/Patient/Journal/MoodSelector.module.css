@@ -16,6 +16,12 @@
   height: 66px;
   width: 66px;
   margin-bottom: 0px;
+  filter: saturate(0);
+  cursor: pointer;
+}
+
+.currentMood {
+  filter: saturate(1);
 }
 
 .statistics {
