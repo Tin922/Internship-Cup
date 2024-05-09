@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./Survey.module.css";
 import { useState } from "react";
 
@@ -44,6 +45,7 @@ const Survery = () => {
     question1: "",
     question2: "",
   });
+  const navigate = useNavigate();
 
   const handleChoice = (choice) => {
     console.log(step);
@@ -68,6 +70,7 @@ const Survery = () => {
 
   const handleSubmit = async () => {
     console.log(surveyData);
+    navigate("/home");
   };
 
   return (

@@ -1,5 +1,5 @@
 generator client {
-  provider = "prisma-client-js"
+  provider= "prisma-client-js"
 }
 
 datasource db {
@@ -7,22 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model SurveyResponse {
-  id                  Int      @id @default(autoincrement())
-  user                User     @relation(fields: [userId], references: [id])
-  userId              Int      @unique
-  gender              String?
-  therapyPreference   String?
-  beenToPsychologist  Boolean?
-  reasonForHelp       String?
-  expectations        String?
-  experiencingAnxiety Boolean?
-  takingMedication    Boolean?
-  chronicPain         Boolean?
-  financialStatus     String?
-  sleepHabits         String?
-  doctorPreferences   String?
-}
+
 
 model User {
   id                   Int             @id @default(autoincrement())
@@ -36,11 +21,10 @@ model User {
   preferredCity        String?
   preferredCounty      String?
   profilePhoto         String?
+  surveyResponse       Json?
   streak               Int             @default(0)
   journalEntries       Journal[]
   appointments         Appointment[]
-  surveyResponseId     Int?
-  SurveyResponse       SurveyResponse?
   DoctorUsers          DoctorUser[]
   Medicine             Medicine[]
   MoodEntry            MoodEntry[]
