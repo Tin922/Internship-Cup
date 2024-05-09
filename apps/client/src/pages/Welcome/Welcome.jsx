@@ -5,7 +5,7 @@ import styles from "./Welcome.module.css";
 const Welcome = () => {
   return (
     <div className={styles.mainArea}>
-      <img src={logo} alt="Worry knot logo" />
+      <img className={styles.image} src={logo} alt="Worry knot logo" />
       <div className={styles.formArea}> 
         <StyledButton text="Prijavi se" styleType="outlined" link="/login" />
         <StyledButton
