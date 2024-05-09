@@ -1,5 +1,4 @@
 import styles from "./Survey.module.css";
-import mascot from "../../../public/mascots/blue.svg";
 import { useState } from "react";
 
 const Survery = () => {
@@ -78,7 +77,9 @@ const Survery = () => {
           <img src={formFields[step].photo} alt="" />
         </div>
       ) : (
-        ""
+        <div className={styles.questionPhoto}>
+          <img src="/survey/Intro.svg" alt="intro" />
+        </div>
       )}
       <p className={styles.questionText}>
         {step === -1 ? "Sada slijedi kratki kviz..." : formFields[step].label}
