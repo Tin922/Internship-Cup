@@ -1,4 +1,4 @@
-.journal{
+.journal {
   margin-top: 28px;
   width: 100%;
 }
@@ -14,6 +14,10 @@
   color: var(--medium);
 }
 
-.currentMoodMascot{
+.currentMoodMascot {
   width: 100%;
+}
+
+.moodSelectorArea {
+  margin-bottom: 24px;
 }

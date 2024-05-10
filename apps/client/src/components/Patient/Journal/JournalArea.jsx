@@ -6,16 +6,16 @@ import styles from "./JournalArea.module.css";
 const JournalArea = () => {
   return (
     <div className={styles.journal}>
-      <div className="currentMoodArea">
+      <div>
         <img
           src={mascot}
           alt="current mood"
           className={styles.currentMoodMascot}
         />
 
-        <div className="moodSelector">
+        <div className={styles.moodSelectorArea}>
           <p className={styles.smallText}>Osjećam se</p>
-          <div className="moodButtons">
+          <div>
             <MoodSelector />
           </div>
         </div>
