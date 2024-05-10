@@ -1,0 +1,29 @@
+.sos {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.bttn {
+  padding: 10px 39px 10px 39px;
+  gap: 8px;
+  border-radius: 22px;
+  border: none;
+  background-color: var(--primary);
+  color: var(--light);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bttnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

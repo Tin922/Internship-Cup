@@ -1,0 +1,24 @@
+.challenges {
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.challengeList {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.challengeImage {
+  width: 85px;
+}
+
+.challengeTitle {
+  text-align: center;
+  margin: 0;
+}

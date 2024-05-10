@@ -11,8 +11,8 @@ const Navbar = (props) => {
   return (
     <ul className={styles.navigation}>
       <NavigationIcon currentPage={currentPage} icon={home} name="home" />
-      <NavigationIcon currentPage={currentPage} icon={pen} name="pen" />
-      <NavigationIcon currentPage={currentPage} icon={plus} name="plus" />
+      <NavigationIcon currentPage={currentPage} icon={pen} name="journal" />
+      <NavigationIcon currentPage={currentPage} icon={plus} name="search" />
       <NavigationIcon currentPage={currentPage} icon={user} name="profile" />
     </ul>
   );

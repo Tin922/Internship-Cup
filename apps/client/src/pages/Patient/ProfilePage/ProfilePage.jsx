@@ -5,7 +5,7 @@ const PatientProfilePage = () => {
   return (
     <div className={styles.mainArea}>
       <h1>Patient Profile Page</h1>
-      <Navbar currentPage="profile"/>
+      <Navbar currentPage="profile" />
     </div>
   );
 };

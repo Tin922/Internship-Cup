@@ -9,6 +9,6 @@ body {
   margin: 0 auto;
   padding: 0;
   width: 375px;
-  background-color: var(--light);
+  background-color: white;
   color: var(--dark);
 }
