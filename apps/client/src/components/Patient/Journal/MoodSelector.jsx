@@ -1,4 +1,4 @@
-import styles from "./MoodSelector.module.css";
+import { useState } from "react";
 import confused from "../../../../public/moods/confused.svg";
 import down from "../../../../public/moods/down.svg";
 import happy from "../../../../public/moods/happy.svg";
@@ -6,7 +6,7 @@ import mad from "../../../../public/moods/mad.svg";
 import neutral from "../../../../public/moods/neutral.svg";
 import sad from "../../../../public/moods/sad.svg";
 import tired from "../../../../public/moods/tired.svg";
-import { useState } from "react";
+import styles from "./MoodSelector.module.css";
 
 const MoodSelector = () => {
   const [currentMood, setCurrentMood] = useState("");
