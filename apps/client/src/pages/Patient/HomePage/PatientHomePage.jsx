@@ -2,9 +2,10 @@ import Navbar from "../../../components/Navbar/Navbar";
 import JournalArea from "../../../components/Patient/Journal/JournalArea";
 import UpcomingCheckups from "../../../components/Patient/Checkups/UpcomingCheckups";
 import Challenges from "../../../components/Patient/Challenges/Challenges";
+import Habits from "../../../components/Patient/Habits/Habits";
+import Sos from "../../../components/Patient/Sos/Sos";
 import styles from "./PatientHomePage.module.css";
 import "../../page.css";
-import Habits from "../../../components/Patient/Habits/Habits";
 
 const PatientHomePage = () => {
   return (
@@ -17,8 +18,7 @@ const PatientHomePage = () => {
       <UpcomingCheckups />
       <Challenges />
       <Habits />
-
-      <div className="sosButtonArea"></div>
+      <Sos />
       <Navbar currentPage="home" />
     </div>
   );
