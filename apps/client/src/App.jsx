@@ -10,6 +10,7 @@ import PatientProfilePage from "./pages/Patient/ProfilePage/ProfilePage";
 import PatientSearchPage from "./pages/Patient/SearchPage/SearchPage";
 import "./theme/colors.css";
 import "./App.css";
+import DoctorHomePageRequests from "./pages/Doctor/HomePage/DoctorHomePageRequests";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/journal-entry" element={<PatientJournalEntry />} />
           <Route path="/search" element={<PatientSearchPage />} />
           <Route path="/profile" element={<PatientProfilePage />} />
+          <Route path="/doctor" element={<DoctorHomePageRequests />} />
         </Routes>
       </Router>
     </>
