@@ -1,5 +1,7 @@
 import styles from "./DoctorHomePageRequests.module.css";
 import PatientRequest from "../../../components/DoctorPatient/PatientRequest/PatientRequest";
+import NavbarDoctor from "../../../components/Navbar/NavbarDoctor/NavbarDoctor";
+
 const patients = [
   {
     id: 1,
@@ -48,6 +50,7 @@ const DoctorHomePageRequests = () => {
           </div>
           <PatientRequest patients={patients} />
         </div>
+        <NavbarDoctor currentPage="doctor" />
       </div>
     </>
   );
