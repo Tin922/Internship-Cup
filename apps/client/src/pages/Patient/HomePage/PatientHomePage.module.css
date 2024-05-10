@@ -1,0 +1,22 @@
+.welcomeTextArea {
+  text-align: left;
+
+  width: 100%;
+}
+
+.pageSubtitle {
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.pageTitle {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  margin: 0;
+}

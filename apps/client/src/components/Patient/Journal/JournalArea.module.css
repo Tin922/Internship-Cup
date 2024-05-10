@@ -1,0 +1,24 @@
+.journal {
+  margin-top: 28px;
+  width: 100%;
+}
+
+.mascots {
+  margin-bottom: -30px;
+  position: relative;
+  z-index: -1;
+}
+
+.smallText {
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--medium);
+}
+
+.currentMoodMascot {
+  width: 100%;
+}
+
+.moodSelectorArea {
+  margin-bottom: 24px;
+}

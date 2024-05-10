@@ -7,40 +7,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model SurveyResponse {
-  id                  Int      @id @default(autoincrement())
-  user                User     @relation(fields: [userId], references: [id])
-  userId              Int      @unique
-  gender              String?
-  therapyPreference   String?
-  beenToPsychologist  Boolean?
-  reasonForHelp       String?
-  expectations        String?
-  experiencingAnxiety Boolean?
-  takingMedication    Boolean?
-  chronicPain         Boolean?
-  financialStatus     String?
-  sleepHabits         String?
-  doctorPreferences   String?
-}
-
 model User {
-  id                   Int             @id @default(autoincrement())
+  id                   Int           @id @default(autoincrement())
   firstName            String
   lastName             String
-  email                String          @unique
+  email                String        @unique
   password             String
-  registrationDate     DateTime        @default(now())
+  registrationDate     DateTime      @default(now())
   dateOfBirth          DateTime?
-  receiveNotifications Boolean         @default(false)
+  receiveNotifications Boolean       @default(false)
   preferredCity        String?
   preferredCounty      String?
   profilePhoto         String?
-  streak               Int             @default(0)
+  surveyResponse       Json?
+  streak               Int           @default(0)
   journalEntries       Journal[]
   appointments         Appointment[]
-  surveyResponseId     Int?
-  SurveyResponse       SurveyResponse?
   DoctorUsers          DoctorUser[]
   Medicine             Medicine[]
   MoodEntry            MoodEntry[]
@@ -50,6 +32,8 @@ model Doctor {
   id                         Int           @id @default(autoincrement())
   firstName                  String
   lastName                   String
+  email                      String        @unique
+  password                   String
   gender                     String
   yearsOfExperience          Int
   specialization             String

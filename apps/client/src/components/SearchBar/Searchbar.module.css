@@ -1,0 +1,23 @@
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  width: 100%;
+  border: 1px solid var(--primary);
+  border-radius: 22px;
+  column-gap: 15px;
+}
+
+.searchButton {
+  cursor: pointer;
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--dark);
+}

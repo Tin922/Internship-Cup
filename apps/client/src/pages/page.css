@@ -1,0 +1,27 @@
+.mainArea {
+  margin-top: 1rem;
+  margin-bottom: 8rem;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.smallText {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--dark-med);
+  text-decoration: none;
+}

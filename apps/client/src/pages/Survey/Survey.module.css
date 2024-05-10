@@ -1,0 +1,84 @@
+.styledButton {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-med);
+  background-color: var(--secondary);
+  padding: 22px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: 0.1s ease-in-out background-color;
+  border-radius: 22px;
+  border: none;
+}
+
+.styledButton:hover {
+  background-color: var(--secondary-shade);
+}
+
+.outlined {
+  background: none;
+  border: 2px solid var(--secondary);
+  transition:
+    0.1s ease-in-out color,
+    0.1s ease-in-out background-color;
+}
+
+.outlined:hover {
+  background-color: var(--secondary);
+}
+.questionPhoto {
+  width: 100%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.questionPhoto img {
+  width: auto;
+  height: 300px;
+}
+
+.mainDiv {
+  width: 375px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.skipButton {
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--grey);
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.questionText {
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+}
+.buttonsYesNo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.backArrow {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  cursor: pointer;
+  width: 12px;
+}
