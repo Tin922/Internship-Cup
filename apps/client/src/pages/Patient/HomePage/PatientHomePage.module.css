@@ -1,6 +1,6 @@
-.welcomeTextArea{
+.welcomeTextArea {
   text-align: left;
-  
+
   width: 100%;
 }
 
@@ -15,7 +15,7 @@
 
 .pageTitle {
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 28px;
   line-height: 33px;
   margin: 0;

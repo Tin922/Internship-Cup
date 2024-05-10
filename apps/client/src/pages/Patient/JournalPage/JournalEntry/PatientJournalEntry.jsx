@@ -72,8 +72,6 @@ const PatientJournalEntry = () => {
       />
 
       <button className={styles.saveButton}>Dodaj u svoj dnevnik</button>
-
-      {/* <Navbar currentPage="journal" /> */}
     </div>
   );
 };
