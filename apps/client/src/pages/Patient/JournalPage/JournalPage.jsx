@@ -1,11 +1,11 @@
 import Navbar from "../../../components/Navbar/Navbar";
-import styles from "./JournalPage.module.css";
+import styles from "./PatientJournalPage.module.css";
 
 const PatientJournalPage = () => {
   return (
     <div className={styles.mainArea}>
-      <h1>Patient Profile Page</h1>
-      <Navbar currentPage="journal"/>
+      <h1>Patient Journal Page</h1>
+      <Navbar currentPage="journal" />
     </div>
   );
 };

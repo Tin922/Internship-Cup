@@ -5,6 +5,9 @@
   height: 140px;
   width: 113px;
   padding: 14px 22px 3px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .journalBookLogo {

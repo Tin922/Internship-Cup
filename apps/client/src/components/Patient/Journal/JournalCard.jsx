@@ -1,8 +1,14 @@
 import JournalBook from "./JournalBook";
 import dnevnikLogo from "../../../../public/dnevnik.svg";
 import styles from "./JournalCard.module.css";
+import { useNavigate } from "react-router-dom";
 
 const JournalCard = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/journal-entry");
+  };
+
   return (
     <div className={styles.journalCard}>
       <div className="column1">
@@ -12,7 +18,10 @@ const JournalCard = () => {
           <br />
           <strong>Super te ide!</strong>
         </p>
-        <button className={styles.bttn} type="button">
+        <button
+          className={styles.bttn}
+          type="button"
+          onClick={() => handleClick()}>
           Kreni
         </button>
       </div>

@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cross {
+  height: 80%;
+  cursor: pointer;
+}
+
+.factors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.smallText {
+  color: var(--medium);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+
+.factor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px;
+  /* margin: 0 5px; */
+  border-radius: 12px;
+  background-color: none;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  margin: 0;
+}
+
+.active {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.textArea {
+  border: 1px solid var(--grey);
+  width: 100%;
+  padding: 20px;
+  resize: none;
+  border-radius: 22px;
+  color: var(--dark-med);
+}
+
+.textArea:focus {
+  outline: none !important;
+}
+
+.saveButton {
+  background-color: var(--primary);
+  color: var(--light);
+  width: 100%;
+  border: none;
+  border-radius: 22px;
+  padding: 22px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 22px;
+}

@@ -8,10 +8,12 @@ import styles from "./PatientHomePage.module.css";
 import "../../page.css";
 
 const PatientHomePage = () => {
+  const name = "User"; // This should be fetched from the backend
+
   return (
     <div className="mainArea">
       <div className={styles.welcomeTextArea}>
-        <h2 className={styles.pageSubtitle}>Pozdrav Marta!</h2>
+        <h2 className={styles.pageSubtitle}>Pozdrav {name}!</h2>
         <h1 className={styles.pageTitle}>Započni svoj dan</h1>
       </div>
       <JournalArea />

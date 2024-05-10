@@ -1,11 +1,12 @@
-.journal{
+.journal {
   margin-top: 28px;
   width: 100%;
 }
 
-.currentMoodMascot {
-  height: 130px;
-  margin-bottom: 0px;
+.mascots {
+  margin-bottom: -30px;
+  position: relative;
+  z-index: -1;
 }
 
 .smallText {
@@ -14,6 +15,10 @@
   color: var(--medium);
 }
 
-.currentMoodMascot{
+.currentMoodMascot {
   width: 100%;
+}
+
+.moodSelectorArea {
+  margin-bottom: 24px;
 }

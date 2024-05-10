@@ -2,6 +2,8 @@ import styles from "./JournalBook.module.css";
 import logo from "../../../../public/logo.svg";
 
 const JournalBook = () => {
+  const days = 5; // This should be fetched from the backend
+
   return (
     <div className={styles.journalBook}>
       <img
@@ -9,8 +11,12 @@ const JournalBook = () => {
         src={logo}
         alt="worry knot logo"
       />
-      <p className={styles.journalBookText}>uzastopni dani</p>
-      <p className={styles.daysCounter}>5</p>
+      {days > 0 && (
+        <>
+          <p className={styles.journalBookText}>uzastopni dani</p>
+          <p className={styles.daysCounter}>{days}</p>
+        </>
+      )}
     </div>
   );
 };
