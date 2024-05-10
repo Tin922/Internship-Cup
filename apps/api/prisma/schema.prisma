@@ -1,5 +1,5 @@
 generator client {
-  provider= "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -7,22 +7,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model User {
-  id                   Int             @id @default(autoincrement())
+  id                   Int           @id @default(autoincrement())
   firstName            String
   lastName             String
-  email                String          @unique
+  email                String        @unique
   password             String
-  registrationDate     DateTime        @default(now())
+  registrationDate     DateTime      @default(now())
   dateOfBirth          DateTime?
-  receiveNotifications Boolean         @default(false)
+  receiveNotifications Boolean       @default(false)
   preferredCity        String?
   preferredCounty      String?
   profilePhoto         String?
   surveyResponse       Json?
-  streak               Int             @default(0)
+  streak               Int           @default(0)
   journalEntries       Journal[]
   appointments         Appointment[]
   DoctorUsers          DoctorUser[]
@@ -34,6 +32,8 @@ model Doctor {
   id                         Int           @id @default(autoincrement())
   firstName                  String
   lastName                   String
+  email                      String        @unique
+  password                   String
   gender                     String
   yearsOfExperience          Int
   specialization             String
