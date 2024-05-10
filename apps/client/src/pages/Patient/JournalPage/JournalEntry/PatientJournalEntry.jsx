@@ -1,11 +1,10 @@
 import { useState } from "react";
-import Navbar from "../../../components/Navbar/Navbar";
-import MoodSelector from "../../../components/Patient/Journal/MoodSelector";
-import plus from "../../../../public/journal/plus.svg";
-import cross from "../../../../public/journal/cross.svg";
-import styles from "./PatientJournalEntry.module.css";
-import "../../page.css";
 import { useNavigate } from "react-router-dom";
+import MoodSelector from "../../../../components/Patient/Journal/MoodSelector";
+import plus from "../../../../../public/journal/plus.svg";
+import cross from "../../../../../public/journal/cross.svg";
+import styles from "./PatientJournalEntry.module.css";
+import "../../../page.css";
 
 const PatientJournalEntry = () => {
   const [factor, setFactor] = useState("");

@@ -4,6 +4,7 @@ import Register from "./pages/UserAuthentification/Register";
 import Welcome from "./pages/Welcome/Welcome";
 import Survey from "./pages/Survey/Survey";
 import PatientHomePage from "./pages/Patient/HomePage/PatientHomePage";
+import PatientJournalEntry from "./pages/Patient/JournalPage/JournalEntry/PatientJournalEntry";
 import PatientJournalPage from "./pages/Patient/JournalPage/JournalPage";
 import PatientProfilePage from "./pages/Patient/ProfilePage/ProfilePage";
 import PatientSearchPage from "./pages/Patient/SearchPage/SearchPage";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/survey" element={<Survey />} />
           <Route path="/home" element={<PatientHomePage />} />
           <Route path="/journal" element={<PatientJournalPage />} />
+          <Route path="/journal-entry" element={<PatientJournalEntry />} />
           <Route path="/search" element={<PatientSearchPage />} />
           <Route path="/profile" element={<PatientProfilePage />} />
         </Routes>
