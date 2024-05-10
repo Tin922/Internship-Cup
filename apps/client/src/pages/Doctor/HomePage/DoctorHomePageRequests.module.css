@@ -1,3 +1,9 @@
+.buttonWrapperOuterContianer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .buttonWrapper {
   width: 332px;
   height: 48px;
@@ -5,6 +11,15 @@
   gap: 8px;
   border-radius: 28.5px 0px 0px 0px;
   display: flex;
+  background-color: var(--light-blue);
+  border-radius: 28.5px;
+  padding: 6px;
+  margin-top: 30px;
+}
+
+.buttonWrapper > button {
+  font-weight: 600;
+  border: none;
 }
 
 .activeButton {
@@ -13,7 +28,7 @@
   border-radius: 22px;
   padding: 14px, 39px, 14px, 39px;
   gap: 8px;
-  background-color: var(--blue);
+  background-color: var(--primary);
   color: #fff;
 }
 
@@ -29,5 +44,18 @@
 
 .sortOptions {
   display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.sortOptions > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  color: var(--grey);
+}
+
+p {
+  margin-top: 5px;
 }
