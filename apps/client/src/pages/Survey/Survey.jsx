@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import styles from "./Survey.module.css";
 import { useState } from "react";
+import back from "../../../public/survey/back.svg";
+import styles from "./Survey.module.css";
 
 const Survery = () => {
   const formFields = [
@@ -75,6 +76,9 @@ const Survery = () => {
 
   return (
     <div className={styles.mainDiv}>
+      {step > 0 && (
+        <img className={styles.backArrow} src={back} alt="go back" onClick={() => setStep(step - 1)} />
+      )}
       {step > -1 ? (
         <div className={styles.questionPhoto}>
           <img src={formFields[step].photo} alt="" />
