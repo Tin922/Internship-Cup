@@ -1,6 +1,6 @@
-import meditate from "../../../../public/habits/meditate.svg";
-import walk from "../../../../public/habits/walk.svg";
-import breathe from "../../../../public/habits/breathe.svg";
+import meditate from "../../../../public/challenges/meditate.svg";
+import walk from "../../../../public/challenges/walk.svg";
+import breathe from "../../../../public/challenges/breathe.svg";
 import styles from "./Challenges.module.css";
 
 const Challenges = () => {

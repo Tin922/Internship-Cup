@@ -4,6 +4,7 @@ import UpcomingCheckups from "../../../components/Patient/Checkups/UpcomingCheck
 import Challenges from "../../../components/Patient/Challenges/Challenges";
 import styles from "./PatientHomePage.module.css";
 import "../../page.css";
+import Habits from "../../../components/Patient/Habits/Habits";
 
 const PatientHomePage = () => {
   return (
@@ -15,8 +16,7 @@ const PatientHomePage = () => {
       <JournalArea />
       <UpcomingCheckups />
       <Challenges />
-
-      <div className="habitsArea"></div>
+      <Habits />
 
       <div className="sosButtonArea"></div>
       <Navbar currentPage="home" />
