@@ -3,9 +3,10 @@
   width: 100%;
 }
 
-.currentMoodMascot {
-  height: 130px;
-  margin-bottom: 0px;
+.mascots {
+  margin-bottom: -30px;
+  position: relative;
+  z-index: -1;
 }
 
 .smallText {

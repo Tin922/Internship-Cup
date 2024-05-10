@@ -2,11 +2,7 @@ import clock from "../../../../public/appointments/clock.svg";
 import calendar from "../../../../public/appointments/calendar.svg";
 import styles from "./Appointment.module.css";
 
-const Appointment = () => {
-  let date, startTime, endTime;
-  date = "Utorak, 12. jul";
-  startTime = "12:00";
-  endTime = "13:00";
+const Appointment = ({ date, startTime, endTime }) => {
 
   return (
     <div className={styles.appointment}>
@@ -15,7 +11,7 @@ const Appointment = () => {
         {date}
       </div>
       <div className={styles.time}>
-        <img className={styles.icon} src={calendar} alt="clock" />
+        <img className={styles.icon} src={calendar} alt="date" />
         {startTime} - {endTime}
       </div>
     </div>
