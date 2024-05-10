@@ -7,6 +7,7 @@ import PatientHomePage from "./pages/Patient/HomePage/PatientHomePage";
 import PatientProfilePage from "./pages/Patient/ProfilePage/ProfilePage";
 import "./theme/colors.css";
 import "./App.css";
+import DoctorHomePageRequests from "./pages/Doctor/HomePage/DoctorHomePageRequests";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/survey" element={<Survey />} />
           <Route path="/home" element={<PatientHomePage />} />
           <Route path="/profile" element={<PatientProfilePage />} />
+          <Route path="/doctor" element={<DoctorHomePageRequests />} />
         </Routes>
       </Router>
     </>
