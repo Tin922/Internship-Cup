@@ -12,3 +12,12 @@ body {
   background-color: white;
   color: var(--dark);
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
