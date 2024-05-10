@@ -90,15 +90,13 @@ const Survery = () => {
       <div className={styles.buttonsYesNo}>
         <button
           className={styles.styledButton}
-          onClick={() => handleChoice("Yes")}
-        >
-          DA
+          onClick={() => handleChoice("Yes")}>
+          {step === -1 ? "NASTAVI" : "DA"}
         </button>
         <button
-          className={styles.styledButton}
-          onClick={() => handleChoice("No")}
-        >
-          NE
+          className={`${styles.styledButton} ${step === -1 ? styles.outlined : ""}`}
+          onClick={() => handleChoice("No")}>
+          {step === -1 ? "PRESKOČI" : "NE"}
         </button>
       </div>
       {step >= 0 && (
