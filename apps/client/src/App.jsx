@@ -11,6 +11,7 @@ import PatientSearchPage from "./pages/Patient/SearchPage/SearchPage";
 import "./theme/colors.css";
 import "./App.css";
 import DoctorHomePageRequests from "./pages/Doctor/HomePage/DoctorHomePageRequests";
+import DoctorHomePageClients from "./pages/Doctor/HomePage/DoctorHomePageClients";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route path="/journal-entry" element={<PatientJournalEntry />} />
           <Route path="/search" element={<PatientSearchPage />} />
           <Route path="/profile" element={<PatientProfilePage />} />
-          <Route path="/doctor" element={<DoctorHomePageRequests />} />
+          <Route path="/doctor/requests" element={<DoctorHomePageRequests />} />
+          <Route path="/doctor/clients" element={<DoctorHomePageClients />} />
         </Routes>
       </Router>
     </>

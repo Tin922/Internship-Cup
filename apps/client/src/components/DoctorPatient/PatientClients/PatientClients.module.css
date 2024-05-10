@@ -1,0 +1,92 @@
+.patientOuterContainer {
+  width: 335px;
+  height: 233px;
+  padding: 20px 0px 0px 0px;
+  gap: 8px;
+  border-radius: 24px 0px 0px 0px;
+  margin: 0 auto;
+}
+
+.patientContainer {
+  margin: 20px 0;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patientData {
+  display: flex;
+  flex-direction: column;
+  margin-left: -85px;
+}
+
+.patientName {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+  text-align: left;
+}
+
+.requestTime {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: var(--grey);
+}
+
+.therapyTime {
+  background-color: var(--light-blue);
+  width: 295px;
+  height: 48px;
+  border-radius: 18px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.iconsAndTime {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.94px;
+  text-align: left;
+}
+
+.activeButton {
+  width: 137px;
+  height: 36px;
+  border-radius: 22px;
+  padding: 14px, 39px, 14px, 39px;
+  gap: 8px;
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.inactiveButton {
+  width: 137px;
+  height: 36px;
+  border-radius: 22px;
+  padding: 14px, 39px, 14px, 39px;
+  gap: 8px;
+  color: var(--grey);
+  border: 1px;
+}
+
+.buttonWrapper {
+  width: 295px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonWrapper > button {
+  font-weight: 600;
+  border: none;
+}
